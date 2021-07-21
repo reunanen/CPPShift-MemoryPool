@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #define MEMORYPOOL_DEFAULT_BLOCK_SIZE 1024 * 1024
 
-namespace CPPShift::Memory {
+namespace CPPShift { namespace Memory {
     // Simple error collection for memory pool
     enum class EMemoryErrors {
         CANNOT_CREATE_MEMORY_POOL,
@@ -60,4 +60,4 @@ namespace CPPShift::Memory {
         SMemoryBlockHeader* firstScopeBlock;
         SMemoryScopeHeader* prevScope;
     };
-}
+} }

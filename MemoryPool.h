@@ -24,7 +24,7 @@
 #include <cstddef>
 #include <memory>
 
-namespace CPPShift::Memory {
+namespace CPPShift { namespace Memory {
 	class MemoryPool {
 	public:
 		/**
@@ -120,7 +120,7 @@ namespace CPPShift::Memory {
 	inline T* MemoryPool::reallocate(T* unit_pointer_start, size_t instances) {
 		return reinterpret_cast<T*>(this->reallocate(reinterpret_cast<void*>(unit_pointer_start), instances * sizeof(T)));
 	}
-}
+} }
 
 // Override new operators to create with memory pool
 extern void* operator new(size_t size, CPPShift::Memory::MemoryPool* mp);
